@@ -27,7 +27,7 @@ figure;
 
 % a) průmerovací filtr délky 3
 A = 1; 
-B = [1 1 1]/3;
+B = ones(1,3)/3;
 x1 = filter(B,A,x);
 X1 = fft(x1,N);
 subplot(4,2,1);
@@ -40,7 +40,7 @@ zplane(roots(B),roots(A));
 
 % b) průmerovací filtr délky 11
 A = 1; 
-B=[1 1 1 1 1 1 1 1 1 1 1]/11;
+B = ones(1,11)/11;
 x2 = filter(B,A,x);
 X2 = fft(x2,N);
 subplot(4,2,3);
@@ -76,11 +76,3 @@ xlabel('f');
 ylabel('|X(f)|');
 subplot(4,2,8);
 zplane(roots(B),roots(A));
-
-
-
-
-
-
-
-
